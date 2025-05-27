@@ -26,7 +26,7 @@ export default function Contact() {
           <div className="p-6 bg-black/30 rounded-lg backdrop-blur-sm">
             <i className="fas fa-map-marker-alt text-2xl text-blue-400 mb-4"></i>
             <h3 className="text-xl mb-2">Location</h3>
-            <p className="text-gray-400">Singapore</p>
+            <p className="text-gray-400">United Kingdom</p>
           </div>
           
           <div className="p-6 bg-black/30 rounded-lg backdrop-blur-sm">
