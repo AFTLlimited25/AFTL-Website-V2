@@ -3,12 +3,20 @@
   publish = ".next"
 
 [build.environment]
-  NEXT_PUBLIC_NODE_ENV = "production"
   NEXT_TELEMETRY_DISABLED = "1"
+  NODE_ENV = "production"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Force HTTPS
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
+# Handle client-side routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
