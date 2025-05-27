@@ -1,28 +1,19 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-// Hardcode credentials temporarily for testing
-const EMAIL_USER = 'abhishekreddy@aftl.co.uk';
-const EMAIL_PASS = 'sbmcamvayaaqxufz';
-const EMAIL_RECIPIENT = 'contact@aftl.co.uk';
-
 export async function POST(request) {
   try {
-    // Log both environment variables and hardcoded values
-    console.log('Credentials check:', {
-      fromEnv: {
-        EMAIL_USER: process.env.EMAIL_USER,
-        EMAIL_PASS_EXISTS: !!process.env.EMAIL_PASS,
-        EMAIL_RECIPIENT: process.env.EMAIL_RECIPIENT
-      },
-      hardcoded: {
-        EMAIL_USER,
-        EMAIL_PASS_EXISTS: !!EMAIL_PASS,
-        EMAIL_RECIPIENT
-      }
-    });
-
+    // Enhanced logging
+    console.log('Starting contact form submission...');
+    
     const data = await request.json();
+    console.log('Received form data:', {
+      name: data.name,
+      email: data.email,
+      subject: data.subject,
+      hasMessage: !!data.message
+    });
+    
     const { name, email, subject, message } = data;
 
     // Validate the input
@@ -42,19 +33,25 @@ export async function POST(request) {
       );
     }
 
-    // Create transporter using hardcoded credentials
+    // Create transporter using environment variables
+    console.log('Creating email transporter...');
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
       auth: {
-        user: EMAIL_USER,  // Use hardcoded value
-        pass: EMAIL_PASS   // Use hardcoded value
-      }
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      },
+      debug: true,
+      logger: true
     });
 
     // Configure email data
+    console.log('Configuring email data...');
     const mailOptions = {
-      from: EMAIL_USER,  // Use hardcoded value
-      to: EMAIL_RECIPIENT,  // Use hardcoded value
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_RECIPIENT,
       subject: `Contact Form: ${subject || 'New Message'} from ${name}`,
       text: `
 Name: ${name}
@@ -76,12 +73,19 @@ ${message}
 
     try {
       // Verify connection first
+      console.log('Verifying SMTP connection...');
       await transporter.verify();
-      console.log('SMTP connection verified');
+      console.log('SMTP connection verified successfully');
       
       // Send email
+      console.log('Attempting to send email...');
       const result = await transporter.sendMail(mailOptions);
-      console.log('Email sent successfully:', result);
+      console.log('Email sent successfully:', {
+        messageId: result.messageId,
+        response: result.response,
+        accepted: result.accepted,
+        rejected: result.rejected
+      });
 
       return NextResponse.json({ 
         success: true, 
