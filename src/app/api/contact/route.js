@@ -38,6 +38,17 @@ export async function POST(request) {
 
         // Create transporter
         console.log('Creating email transporter...');
+        console.log('Environment variables check:', {
+            hasGmailUser: !!process.env.GMAIL_USER,
+            hasGmailPassword: !!process.env.GMAIL_APP_PASSWORD,
+            hasGmailRecipient: !!process.env.GMAIL_RECIPIENT,
+            gmailUser: process.env.GMAIL_USER
+        });
+
+        if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD || !process.env.GMAIL_RECIPIENT) {
+            throw new Error('Missing email configuration. Please check your environment variables.');
+        }
+
         const transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
             port: 465,
@@ -47,6 +58,11 @@ export async function POST(request) {
                 pass: process.env.GMAIL_APP_PASSWORD // Use App Password here
             }
         });
+
+        // Verify transporter configuration
+        console.log('Verifying transporter...');
+        await transporter.verify();
+        console.log('Transporter verified successfully');
 
         // Configure email data
         console.log('Configuring email data...');
@@ -96,4 +112,4 @@ ${message}
             { status: 500 }
         );
     }
-} 
+}
