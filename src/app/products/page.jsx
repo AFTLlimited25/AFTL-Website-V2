@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from 'next/link';
 
 function ProductsPage() {
   const products = [
@@ -9,6 +10,8 @@ function ProductsPage() {
       longDescription: "TaskMe AI is your intelligent personal assistant that helps manage your daily tasks, schedule appointments, and handle routine administrative work. Powered by advanced AI, it learns your preferences and becomes more efficient over time.",
       icon: "robot",
       status: "beta",
+      image: "/taskmeai-new.jpg",
+      slug: "taskme-ai",
       features: [
         "Natural language task creation",
         "Smart scheduling and reminders",
@@ -29,6 +32,8 @@ function ProductsPage() {
       longDescription: "Transform your ideas into beautiful images with our state-of-the-art AI Image Generator. Whether you need marketing materials, artistic concepts, or unique designs, our AI can create them in seconds.",
       icon: "image",
       status: "coming-soon",
+      image: "https://via.placeholder.com/150",
+      slug: "ai-image-generator",
       features: [
         "Text-to-image generation",
         "Style customization",
@@ -49,6 +54,8 @@ function ProductsPage() {
       longDescription: "Connect with your AI assistant through voice messages on Telegram. Perfect for hands-free operation, our Voice Agent understands context, responds naturally, and helps you stay productive on the go.",
       icon: "comment",
       status: "live",
+      image: "https://via.placeholder.com/150",
+      slug: "telegram-ai-agent",
       features: [
         "Voice message processing",
         "Natural language understanding",
@@ -69,6 +76,8 @@ function ProductsPage() {
       longDescription: "Get preliminary health insights with our AI-powered Symptom Checker. Using advanced medical knowledge bases and machine learning, it helps you understand your symptoms and suggests when to seek professional medical advice.",
       icon: "heartbeat",
       status: "coming-soon",
+      image: "https://via.placeholder.com/150",
+      slug: "symptom-checker",
       features: [
         "Symptom analysis",
         "Health risk assessment",
@@ -81,6 +90,27 @@ function ProductsPage() {
         "Better health decisions",
         "24/7 availability",
         "Privacy-focused"
+      ]
+    },
+    {
+      name: "Snap Recipe",
+      description: "Get the recipe from any food picture",
+      longDescription: "This product is all about getting the recipe from any food picture. When a user uploads a picture, it detects and finds the ingredients and using AI it also finds the exact recipe and even you can modify the recipe according to the servings with many more options",
+      icon: "utensils",
+      status: "Live",
+      image: "/snaprecipe.jpg",
+      slug: "snap-recipe",
+      features: [
+        "Detect ingredients from food picture",
+        "Find exact recipe using AI",
+        "Modify recipe according to servings",
+        "Many more options"
+      ],
+      benefits: [
+        "Get recipe from any food picture",
+        "Find ingredients easily",
+        "Modify recipe easily",
+        "Discover new recipes"
       ]
     }
   ];
@@ -103,9 +133,11 @@ function ProductsPage() {
           {products.map((product, index) => (
             <div key={index} className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
               <div className="flex items-start gap-6">
-                <div className="bg-blue-500/20 p-4 rounded-xl">
-                  <i className={`fas fa-${product.icon} text-4xl text-blue-400`}></i>
-                </div>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-20 h-20 object-cover rounded-xl"
+                />
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-3xl font-light">{product.name}</h2>
@@ -115,9 +147,10 @@ function ProductsPage() {
                         : product.status === "beta"
                         ? "bg-blue-500/20 text-blue-400"
                         : "bg-purple-500/20 text-purple-400"
-                    }`}>
-                      {product.status}
-                    </span>
+                    }`}
+                  >
+                    {product.status}
+                  </span>
                   </div>
                   <p className="text-gray-300 text-lg mb-6">
                     {product.longDescription}
@@ -164,9 +197,9 @@ function ProductsPage() {
                         Join Waitlist
                       </button>
                     )}
-                    <button className="px-6 py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition duration-300">
+                    <Link href={`/products/${product.slug}`} className="px-6 py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition duration-300">
                       Learn More
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -196,4 +229,4 @@ function ProductsPage() {
   );
 }
 
-export default ProductsPage; 
+export default ProductsPage;

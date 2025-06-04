@@ -34,6 +34,12 @@ function MainComponent() {
       icon: "heartbeat",
       status: "coming-soon",
     },
+    {
+      name: "Snap Recipe",
+      description: "Get the recipe from any food picture",
+      icon: "utensils",
+      status: "live",
+    },
   ];
 
   useEffect(() => {
@@ -87,23 +93,32 @@ function MainComponent() {
             <br />
             with AI
           </h1>
+          <h2 className="text-2xl md:text-3xl font-light mb-8">
+            AFTL builds next-generation AI tools that automate administrative
+            tasks and empower productivity.
+          </h2>
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Empowering businesses and individuals with cutting-edge AI solutions
-            that transform the way we work and live.
+            We’re an AI solutions company that develops user-friendly AI agents
+            and digital productivity tools to simplify your daily workflow.
           </p>
+         
           <div className="flex flex-col md:flex-row justify-center gap-4 mb-16">
-            <Link href="/products" className="px-8 py-4 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300 text-lg inline-block text-center">
-              Try Our Products
+            <Link
+              href="/about"
+              className="px-8 py-4 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300 text-lg inline-block text-center"
+            >
+              Learn More About Us
             </Link>
-            <Link href="/contact" className="px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition duration-300 text-lg inline-block text-center">
-              Book a Demo
+            <Link
+              href="/contact"
+              className="px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition duration-300 text-lg inline-block text-center"
+            >
+              See it in Action
             </Link>
-            <button className="px-8 py-4 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition duration-300 text-lg">
-              Join Beta
-            </button>
           </div>
         </div>
       </div>
+
 
       {/* Video Section */}
       <div className="py-20 bg-black/30">
