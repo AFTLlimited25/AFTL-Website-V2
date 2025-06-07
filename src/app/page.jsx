@@ -1,10 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 function MainComponent() {
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [currentProduct, setCurrentProduct] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
   const [isAdmin, setIsAdmin] = useState(false); // In production, this should be handled by proper auth
   const videoId = "1WP636Jr-sFYARi490eWryGdyVOsGMoCl";
   const videoUrl = `https://drive.google.com/uc?export=download&id=${videoId}`;
@@ -52,36 +55,33 @@ function MainComponent() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
       {/* Navigation */}
-      <nav className="bg-black/50 backdrop-blur-md fixed w-full z-50">
-        <div className="container mx-auto px-4 h-20 relative flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <img
-              src="https://ucarecdn.com/17d72eb0-636f-4470-b2f2-bfa7633d12d5/-/format/auto/"
-              alt="AFTL Logo"
-              className="h-32 w-auto mix-blend-screen opacity-90 filter brightness-125"
-            />
-          </div>
-          <div className="md:hidden">
-            <button className="text-white focus:outline-none">
-              <i className="fas fa-bars text-2xl"></i>
-            </button>
-          </div>
-          <div className="hidden md:flex space-x-8">
-            <a href="/products" className="text-white hover:text-blue-400 text-lg">
-              Products
-            </a>
-            <a href="/solutions" className="text-white hover:text-blue-400 text-lg">
-              Solutions
-            </a>
-            <a href="/about" className="text-white hover:text-blue-400 text-lg">
-              About
-            </a>
-            <a href="/blog" className="text-white hover:text-blue-400 text-lg">
-              Blog
-            </a>
-            <a href="/contact" className="text-white hover:text-blue-400 text-lg">
-              Contact
-            </a>
+<nav className="bg-black/50 backdrop-blur-md fixed w-full z-50">
+        <div className="container mx-auto px-4 h-20 relative">
+          <div className="flex justify-between items-center absolute inset-x-6 -bottom-4">
+            <div className="flex items-center space-x-2">
+              <img
+                src="https://ucarecdn.com/17d72eb0-636f-4470-b2f2-bfa7633d12d5/-/format/auto/"
+                alt="AFTL Logo"
+                className="h-32 w-auto mix-blend-screen opacity-90 filter brightness-125"
+              />
+            </div>
+            <div className="space-x-8 hidden md:block">
+              <a href="/products" className="text-white hover:text-blue-400 text-lg">
+                Products
+              </a>
+              <a href="/solutions" className="text-white hover:text-blue-400 text-lg">
+                Solutions
+              </a>
+              <a href="/about" className="text-white hover:text-blue-400 text-lg">
+                About
+              </a>
+              <a href="/blog" className="text-white hover:text-blue-400 text-lg">
+                Blog
+              </a>
+              <a href="/contact" className="text-white hover:text-blue-400 text-lg">
+                Contact
+              </a>
+            </div>
           </div>
         </div>
       </nav>
