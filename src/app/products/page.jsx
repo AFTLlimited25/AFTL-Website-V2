@@ -7,24 +7,11 @@ function ProductsPage() {
     {
       name: "TaskMe AI",
       description: "Your personal AI life admin assistant",
-      longDescription: "TaskMe AI is your intelligent personal assistant that helps manage your daily tasks, schedule appointments, and handle routine administrative work. Powered by advanced AI, it learns your preferences and becomes more efficient over time.",
+      longDescription: "Simplify life. Streamline work. Focus on what truly matters.\n\nTaskMe AI is your personal, AI-driven productivity companion, crafted to take the overwhelm out of life admin. Whether it’s managing appointments, sending reminders, tackling your daily to-do list, or drafting emails—TaskMe AI handles it all with ease and precision.\n\nImagine a personal assistant that’s always on, available 24/7, proactively managing your schedule and understanding your unique preferences. From managing bookings and cancellations to seamlessly integrating with Gmail, Google Calendar, Outlook, and more—TaskMe AI fits right into your digital world, working smarter so you can work better.\n\n✨ Why Choose TaskMe AI?\n✅ 24/7 Personal Assistant — Always available, always organized.\n\n✅ Total Life Admin Solution — From emails to reminders, bookings to cancellations—TaskMe AI keeps everything on track.\n\n✅ Smarter Scheduling — Never miss an appointment, double-book, or forget a task again.\n\n✅ Seamless Integration — Works perfectly with your favorite tools like Gmail, Google Calendar, Outlook, and more.\n\n✅ Intelligent, Adaptive, and Private — Learns your routines and preferences while keeping your data secure.\n\nTaskMe AI isn’t just another app—it’s your productivity game-changer.\n\nFree yourself from repetitive tasks and focus on what truly matters. Let TaskMe AI handle the admin—so you can live your best life.\n\n👉 Start now and unlock a new era of productivity!",
       icon: "robot",
       status: "beta",
       image: "/taskmeai-new.jpg",
       slug: "taskme-ai",
-      features: [
-        "Natural language task creation",
-        "Smart scheduling and reminders",
-        "Email and calendar integration",
-        "Automated follow-ups",
-        "Custom workflow automation"
-      ],
-      benefits: [
-        "Save 10+ hours per week",
-        "Never miss important tasks",
-        "Reduce administrative overhead",
-        "Improve work-life balance"
-      ]
     },
     {
       name: "AI Image Generator",
@@ -34,19 +21,6 @@ function ProductsPage() {
       status: "coming-soon",
       image: "https://via.placeholder.com/150",
       slug: "ai-image-generator",
-      features: [
-        "Text-to-image generation",
-        "Style customization",
-        "High-resolution output",
-        "Batch processing",
-        "Commercial usage rights"
-      ],
-      benefits: [
-        "Reduce design costs",
-        "Quick concept visualization",
-        "Unlimited creative possibilities",
-        "No design skills needed"
-      ]
     },
     {
       name: "Telegram AI Agent",
@@ -56,19 +30,6 @@ function ProductsPage() {
       status: "live",
       image: "https://via.placeholder.com/150",
       slug: "telegram-ai-agent",
-      features: [
-        "Voice message processing",
-        "Natural language understanding",
-        "Multi-language support",
-        "Context awareness",
-        "Custom command creation"
-      ],
-      benefits: [
-        "Hands-free operation",
-        "Quick voice responses",
-        "Seamless Telegram integration",
-        "Accessible anywhere"
-      ]
     },
     {
       name: "Symptom Checker",
@@ -78,19 +39,6 @@ function ProductsPage() {
       status: "coming-soon",
       image: "https://via.placeholder.com/150",
       slug: "symptom-checker",
-      features: [
-        "Symptom analysis",
-        "Health risk assessment",
-        "Medical reference database",
-        "Emergency guidance",
-        "Health tracking"
-      ],
-      benefits: [
-        "Quick health insights",
-        "Better health decisions",
-        "24/7 availability",
-        "Privacy-focused"
-      ]
     },
     {
       name: "Snap Recipe",
@@ -100,18 +48,6 @@ function ProductsPage() {
       status: "Live",
       image: "/snaprecipe.jpg",
       slug: "snap-recipe",
-      features: [
-        "Detect ingredients from food picture",
-        "Find exact recipe using AI",
-        "Modify recipe according to servings",
-        "Many more options"
-      ],
-      benefits: [
-        "Get recipe from any food picture",
-        "Find ingredients easily",
-        "Modify recipe easily",
-        "Discover new recipes"
-      ]
     }
   ];
 
@@ -128,19 +64,21 @@ function ProductsPage() {
       </div>
 
       {/* Products Grid */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 gap-12">
+      <div className="container mx-auto px-4 py-3">
+        <div className="grid grid-cols-2 gap-8">
           {products.map((product, index) => (
-            <div key={index} className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
+            <div key={index} className="bg-gradient-to-br from-gray-800 to-gray-700 shadow-lg backdrop-blur-lg rounded-2xl p-8 hover:scale-105 transition-all duration-300 mb-4">
               <div className="flex items-start gap-6">
                 <img
                   src={product.image}
-                  alt={product.name}
-                  className="w-20 h-20 object-cover rounded-xl"
+                  alt={`AI Product: ${product.name}`}
+                  loading="lazy"
+                  style={{aspectRatio: '1 / 1', objectFit: 'cover'}}
+                  className="w-20 h-12 object-cover rounded-xl"
                 />
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-3xl font-light">{product.name}</h2>
+                    <h2 style={{fontFamily: 'sans-serif'}} className="text-3xl font-light">{product.name}</h2>
                     <span className={`px-3 py-1 rounded-full text-sm ${
                       product.status === "live"
                         ? "bg-green-500/20 text-green-400"
@@ -152,53 +90,13 @@ function ProductsPage() {
                     {product.status}
                   </span>
                   </div>
-                  <p className="text-gray-300 text-lg mb-6">
-                    {product.longDescription}
+                  <p style={{fontFamily: 'sans-serif'}} className="text-gray-300 text-lg mb-6">
+                    {product.description}
                   </p>
                   
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl mb-4 text-blue-400">Key Features</h3>
-                      <ul className="space-y-3">
-                        {product.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center gap-2">
-                            <i className="fas fa-check text-green-400"></i>
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="text-xl mb-4 text-blue-400">Benefits</h3>
-                      <ul className="space-y-3">
-                        {product.benefits.map((benefit, idx) => (
-                          <li key={idx} className="flex items-center gap-2">
-                            <i className="fas fa-star text-yellow-400"></i>
-                            <span>{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
                   <div className="mt-8 flex gap-4">
-                    {product.status === "live" && (
-                      <button className="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300">
-                        Try Now
-                      </button>
-                    )}
-                    {product.status === "beta" && (
-                      <button className="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300">
-                        Join Beta
-                      </button>
-                    )}
-                    {product.status === "coming-soon" && (
-                      <button className="px-6 py-3 border-2 border-purple-500 text-purple-400 rounded-full hover:bg-purple-500 hover:text-white transition duration-300">
-                        Join Waitlist
-                      </button>
-                    )}
                     <Link href={`/products/${product.slug}`} className="px-6 py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition duration-300">
-                      Learn More
+                      Read More
                     </Link>
                   </div>
                 </div>
