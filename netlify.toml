@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+publish = "public"
 
 [build.environment]
   NEXT_TELEMETRY_DISABLED = "1"
@@ -20,4 +20,4 @@
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200 
+  status = 200
