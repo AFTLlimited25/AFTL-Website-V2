@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.className} bg-base text-primary-text`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider>
           <SmoothScroll>
             <PageLayout>
               <Navbar />
