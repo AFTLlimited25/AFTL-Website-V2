@@ -32,7 +32,7 @@
   }
 
   .dark body {
-    @apply bg-secondary-accent-graphite text-base;
+    @apply bg-secondary-accent-graphite text-white;
   }
 }
 
