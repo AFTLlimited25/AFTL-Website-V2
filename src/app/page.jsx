@@ -111,9 +111,6 @@ function MainComponent() {
             <h2 className="text-xl md:text-2xl text-secondary-accent-graphite">
               AFTL crafts intelligent tools to simplify life and work — fast, secure, and powerful.
             </h2>
-            <p>
-              We’re an AI solutions company that develops user-friendly AI agents and digital productivity tools to simplify your daily workflow.
-            </p>
 
           <div className="flex flex-col md:flex-row justify-center gap-4 mb-16">
             <Link
