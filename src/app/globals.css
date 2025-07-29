@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-aftl-background text-aftl-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-aftl-heading font-sans;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  p {
+    @apply text-base md:text-lg;
+  }
+
+  a {
+    @apply text-aftl-accent hover:underline;
+  }
+
+  .dark body {
+    @apply bg-secondary-accent-graphite text-base;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-8 py-4 rounded-full transition-all duration-300;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-aftl-accent to-indigo-500 text-white hover:scale-105;
+  }
+  .btn-secondary {
+    @apply border-2 border-aftl-accent text-aftl-accent hover:bg-aftl-accent hover:text-white hover:scale-105;
+  }
+
+  .nav-link {
+    color: black;
+    transition: all 0.5s ease;
+  }
+  .nav-link:hover {
+    background: linear-gradient(to right, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
