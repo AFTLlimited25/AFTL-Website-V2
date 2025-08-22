@@ -1,4 +1,16 @@
-import { Inter } from 'next/font/google';
+import { Inter }    openGraph: {
+    title: 'AFTL – AI Solutions & Tools',
+    description: 'AFTL provides AI-powered tools and intelligent automation to grow businesses.',
+    url: 'https://aftl.co.uk',
+    siteName: 'AFTL',
+    images: [
+      {
+        url: 'https://aftl.co.uk/aftl%20logo%20(1).svg',
+        width: 800,
+        height: 600,
+        alt: 'AFTL Logo – AI Solutions for Business',
+      },
+    ],ont/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import { ThemeProvider } from '@/components/ThemeProvider';
@@ -56,7 +68,7 @@ export default function RootLayout({ children }) {
             "logo": "https://aftl.co.uk/aftl%20logo%20(1).svg",
             "description": "AFTL provides AI solutions, AI-powered tools, and intelligent automation to help businesses grow and innovate.",
             "sameAs": [
-              "https://www.linkedin.com/company/aftl",
+              "https://linkedin.com/company/aftl",
               "https://twitter.com/aftl"
             ]
           }}
