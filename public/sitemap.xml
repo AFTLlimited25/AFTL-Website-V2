@@ -2,49 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aftl.co.uk/</loc>
-    <lastmod>{new Date().toISOString()}</lastmod>
+    <lastmod>2025-09-06T21:28:35Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aftl.co.uk/about</loc>
-    <lastmod>{new Date().toISOString()}</lastmod>
+    <lastmod>2025-09-06T21:28:35Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aftl.co.uk/products</loc>
-    <lastmod>{new Date().toISOString()}</lastmod>
+    <lastmod>2025-09-06T21:28:35Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aftl.co.uk/contact</loc>
-    <lastmod>{new Date().toISOString()}</lastmod>
+    <lastmod>2025-09-06T21:28:35Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aftl.co.uk/careers</loc>
-    <lastmod>{new Date().toISOString()}</lastmod>
+    <lastmod>2025-09-06T21:28:35Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aftl.co.uk/help</loc>
-    <lastmod>{new Date().toISOString()}</lastmod>
+    <lastmod>2025-09-06T21:28:35Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aftl.co.uk/privacy-policy</loc>
-    <lastmod>{new Date().toISOString()}</lastmod>
+    <lastmod>2025-09-06T21:28:35Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aftl.co.uk/terms-of-service</loc>
-    <lastmod>{new Date().toISOString()}</lastmod>
+    <lastmod>2025-09-06T21:28:35Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
