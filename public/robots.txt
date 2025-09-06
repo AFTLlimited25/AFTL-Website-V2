@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aftl.co.uk/sitemap.xml
+
+# Disallow crawling of admin or private areas
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow crawling of important pages
+Allow: /
+Allow: /about
+Allow: /products
+Allow: /contact
+Allow: /careers
+Allow: /help
+Allow: /privacy-policy
+Allow: /terms-of-service

@@ -35,5 +35,8 @@
     "tailwindcss": "^3.3.0",
     "three": "^0.178.0",
     "three-gltf-loader": "^1.111.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.3"
   }
 }

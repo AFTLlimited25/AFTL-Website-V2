@@ -1,16 +1,4 @@
-import { Inter }    openGraph: {
-    title: 'AFTL – AI Solutions & Tools',
-    description: 'AFTL provides AI-powered tools and intelligent automation to grow businesses.',
-    url: 'https://aftl.co.uk',
-    siteName: 'AFTL',
-    images: [
-      {
-        url: 'https://aftl.co.uk/aftl%20logo%20(1).svg',
-        width: 800,
-        height: 600,
-        alt: 'AFTL Logo – AI Solutions for Business',
-      },
-    ],ont/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import { ThemeProvider } from '@/components/ThemeProvider';
@@ -55,6 +43,14 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="Qt1DkSXGqaIM7QNESdld2fTcNevx26Ql88TJ277o5xg" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/svg+xml" href="/aftl%20logo%20(1).svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#ffffff" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -65,7 +61,19 @@ export default function RootLayout({ children }) {
             "@type": "Organization",
             "name": "AFTL (Advanced Future Tech Labs)",
             "url": "https://aftl.co.uk",
-            "logo": "https://aftl.co.uk/aftl%20logo%20(1).svg",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://aftl.co.uk/aftl%20logo%20(1).svg",
+              "width": "512",
+              "height": "512",
+              "caption": "AFTL - Advanced Future Tech Labs"
+            },
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://aftl.co.uk/aftl%20logo%20(1).svg",
+              "width": "512",
+              "height": "512"
+            },
             "description": "AFTL provides AI solutions, AI-powered tools, and intelligent automation to help businesses grow and innovate.",
             "sameAs": [
               "https://linkedin.com/company/aftl",
