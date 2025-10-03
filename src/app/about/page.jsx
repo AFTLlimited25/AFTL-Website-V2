@@ -24,12 +24,19 @@ function AboutPage() {
       avatar: "/abhishek.jpg"
     },
     {
-      name: "Noor Ul Ain",
-      role: "Marketing Head",
-      highlight: "SaaS Marketing Head (B2B GTM)",
-      linkedin: "https://www.linkedin.com/in/noorulain-marketing",
-      avatar: "/noor.jpg"
-    }
+      name: "Roshan Panda",
+      role: "Software Developer",
+      highlight: "Experienced in building Saas Products",
+      linkedin: "",
+      avatar: ""
+    },
+    {
+      name: "B Chandrashekhar",
+      role: "Software Developer",
+      highlight: "Experienced in Designing & Optimization of application",
+      linkedin: "",
+      avatar: ""
+    },
   ];
 
   const schema = {
