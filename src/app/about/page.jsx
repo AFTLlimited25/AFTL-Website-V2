@@ -28,14 +28,14 @@ function AboutPage() {
       role: "Software Developer",
       highlight: "Experienced in building Saas Products",
       linkedin: "https://www.linkedin.com/in/roshan-developer?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMIW4IzRORj%2BkLNgXsg3CEw%3D%3D",
-      avatar: ""
+      avatar: "/roshan.jpg"
     },
     {
       name: "B Chandrashekhar",
       role: "Software Developer",
       highlight: "Experienced in Designing & Optimization of application",
       linkedin: "https://www.linkedin.com/in/shekhar01?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BqJaOmGtSSiauGujlWoapBA%3D%3D",
-      avatar: ""
+      avatar: "/shekhar.jpg"
     },
   ];
 
