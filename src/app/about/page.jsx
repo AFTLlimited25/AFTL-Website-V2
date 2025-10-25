@@ -11,7 +11,7 @@ function AboutPage() {
     {
       name: "Shubham Tiwari",
       role: "Founder & CEO",
-      highlight: "6+ years of experience,in leading product direction and strategic partnerships",
+      highlight: "6+ years of experience, leading product direction and strategic partnerships",
       linkedin: "https://www.linkedin.com/in/theshubhamtiwari",
       avatar: "/shubham.jpg"
     },
@@ -26,15 +26,15 @@ function AboutPage() {
     {
       name: "Roshan Panda",
       role: "Software Developer",
-      highlight: "Experienced in building Saas Products",
-      linkedin: "https://www.linkedin.com/in/roshan-developer?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMIW4IzRORj%2BkLNgXsg3CEw%3D%3D",
+      highlight: "Experienced in building SaaS Products",
+      linkedin: "https://www.linkedin.com/in/roshan-developer",
       avatar: "/roshan.jpg"
     },
     {
       name: "B Chandrashekhar",
       role: "Software Developer",
-      highlight: "Experienced in Designing & Optimization of application",
-      linkedin: "https://www.linkedin.com/in/shekhar01?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BqJaOmGtSSiauGujlWoapBA%3D%3D",
+      highlight: "Experienced in Designing & Optimization of applications",
+      linkedin: "https://www.linkedin.com/in/shekhar01",
       avatar: "/shekhar.jpg"
     },
   ];
@@ -46,35 +46,25 @@ function AboutPage() {
     "url": "https://aftl.ai",
     "logo": "https://aftl.ai/logo.svg",
     "founders": [
-      {
-        "@type": "Person",
-        "name": "Shubham Tiwari",
-        "sameAs": "https://www.linkedin.com/in/theshubhamtiwari"
-      },
-      {
-        "@type": "Person",
-        "name": "Abhishek Mallapareddy",
-        "sameAs": "https://www.linkedin.com/in/abhishekmallapareddy"
-      }
+      { "@type": "Person", "name": "Shubham Tiwari", "sameAs": "https://www.linkedin.com/in/theshubhamtiwari" },
+      { "@type": "Person", "name": "Abhishek Mallapareddy", "sameAs": "https://www.linkedin.com/in/abhishekmallapareddy" }
     ],
     "description": "AFTL builds AI productivity tools like TaskMe AI to simplify digital admin for individuals and teams."
   };
 
   return (
-    <div className="min-h-screen bg-aftl-background">
+    <div className="min-h-screen bg-gray-50 text-gray-900">
       <SchemaMarkup schema={schema} />
 
       {/* Hero Section */}
       <AnimateOnScroll>
-        <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-aftl-heading">
-            Empowering People with AI-First Tools
-          </h1>
-          <p className="text-lg md:text-xl text-aftl-body mt-4 max-w-3xl mx-auto">
-            AFTL (Advanced Future Tech Labs) builds AI-first tools that simplify everyday life by turning routine tasks into intelligent, automated experiences. From managing digital clutter to exploring smarter ways to engage with food through apps like Platrr, we design products that give people their time back. Our mission is to make AI practical, personal, and effortless.
+        <div className="container mx-auto px-4 py-16 text-center bg-white rounded-lg shadow">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Empowering People with AI-First Tools</h1>
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+            AFTL builds AI-first tools that simplify everyday life by turning routine tasks into intelligent, automated experiences...
           </p>
           <div className="mt-8">
-            <Link href="/products" className="btn btn-primary">
+            <Link href="/products" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
               Explore Platrr
             </Link>
           </div>
@@ -83,15 +73,13 @@ function AboutPage() {
 
       {/* Industry Context Section */}
       <AnimateOnScroll>
-        <div className="py-16 bg-light-mist">
+        <div className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-aftl-heading mb-12">
-              Why Now?
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-12">Why Now?</h2>
+            <div className="grid md:grid-cols-2 gap-8 text-left">
               <div>
                 <h3 className="text-2xl font-bold mb-4">❗ The Problem with Today’s Food Platforms</h3>
-                <ul className="text-left space-y-2">
+                <ul className="space-y-2 text-gray-700">
                   <li>❌ Endless recipe content, but no real personalization — just noise</li>
                   <li>❌ Meal planning, nutrition tracking, and grocery lists are scattered across apps</li>
                   <li>❌ Focused on trends and aesthetics, not real-life cooking or community</li>
@@ -99,7 +87,7 @@ function AboutPage() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold mb-4">✅ Our Solution — Platrr</h3>
-                <ul className="text-left space-y-2">
+                <ul className="space-y-2 text-gray-700">
                   <li>✅ AI that learns your taste, dietary goals, and schedule — real personalization</li>
                   <li>✅ One platform to plan meals, track nutrition, generate smart grocery lists</li>
                   <li>✅ Built to connect food lovers, home cooks, and families through shared plans, recipes, and chats</li>
@@ -113,25 +101,23 @@ function AboutPage() {
 
       {/* What We're Building Section */}
       <AnimateOnScroll>
-        <div className="py-16 bg-light-mist">
+        <div className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-aftl-heading mb-12">
-              What We’re Building
-            </h2>
-            <div className="text-left">
-              <table className="w-full table-fixed">
-                <thead>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-12">What We’re Building</h2>
+            <div className="text-left overflow-x-auto">
+              <table className="w-full table-fixed border border-gray-200 bg-white rounded-lg shadow">
+                <thead className="bg-gray-100">
                   <tr>
-                    <th className="w-1/4 text-left font-bold text-aftl-heading">Product</th>
-                    <th className="w-1/4 text-left font-bold text-aftl-heading">Status</th>
-                    <th className="w-1/2 text-left font-bold text-aftl-heading">Description</th>
+                    <th className="w-1/4 p-4 text-left font-bold">Product</th>
+                    <th className="w-1/4 p-4 text-left font-bold">Status</th>
+                    <th className="w-1/2 p-4 text-left font-bold">Description</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td className="py-4 font-bold text-aftl-heading">Platrr</td>
-                    <td className="py-4 text-aftl-subtext">Phase 2 – In Development</td>
-                    <td className="py-4 text-aftl-body">An AI-based food platform that helps users plan meals, generate grocery lists, track nutrition, and connect with a like-minded food community.</td>
+                  <tr className="border-t border-gray-200">
+                    <td className="p-4 font-bold">Platrr</td>
+                    <td className="p-4 text-gray-600">Phase 2 – In Development</td>
+                    <td className="p-4 text-gray-700">AI-based food platform for meal planning, grocery lists, nutrition tracking, and community.</td>
                   </tr>
                 </tbody>
               </table>
@@ -142,29 +128,27 @@ function AboutPage() {
 
       {/* Meet the Team Section */}
       <AnimateOnScroll>
-        <div id="team" className="py-16 bg-light-mist">
+        <div id="team" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-aftl-heading mb-12">
-              Meet the Team
-            </h2>
-            <p className="text-lg md:text-xl text-aftl-body mt-4 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-12">Meet the Team</h2>
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
               We’re a small but focused founding team with experience in AI, product development, and startup operations.
             </p>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               {team.map((member, index) => (
                 <div key={index} className="p-8 rounded-lg shadow-lg bg-white text-center">
-                  <img src={member.avatar} alt={member.name} className="w-48 h-56 object-cover rounded-lg mx-auto mb-4 shadow-lg" loading="lazy" />
+                  <img src={member.avatar} alt={member.name} className="w-48 h-56 object-cover rounded-lg mx-auto mb-4 shadow" loading="lazy" />
                   <h3 className="text-xl font-bold">{member.name}</h3>
-                  <p className="text-aftl-subtext">{member.role}</p>
-                  <p className="mt-4 text-aftl-body">{member.highlight}</p>
+                  <p className="text-gray-600">{member.role}</p>
+                  <p className="mt-4 text-gray-700">{member.highlight}</p>
                   <div className="flex justify-center mt-4 space-x-4">
                     {member.linkedin && (
-                      <Link href={member.linkedin} className="text-aftl-accent hover:text-aftl-heading">
+                      <Link href={member.linkedin} className="text-blue-600 hover:text-blue-800">
                         <FontAwesomeIcon icon={faLinkedin} size="2x" />
                       </Link>
                     )}
-                    {member.github && (
-                      <Link href={member.github} className="text-aftl-accent hover:text-aftl-heading">
+                    {member.github && member.github.length > 0 && (
+                      <Link href={member.github} className="text-gray-800 hover:text-gray-900">
                         <FontAwesomeIcon icon={faGithub} size="2x" />
                       </Link>
                     )}
@@ -178,31 +162,29 @@ function AboutPage() {
 
       {/* Product Roadmap Section */}
       <AnimateOnScroll>
-        <div id="roadmap" className="py-16">
+        <div id="roadmap" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-aftl-heading mb-12">
-              Product Roadmap
-            </h2>
-            <div className="space-y-8">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-12">Product Roadmap</h2>
+            <div className="space-y-8 text-left">
               <div className="flex items-center space-x-4">
                 <div className="text-4xl">✅</div>
                 <div>
-                  <h3 className="text-xl font-bold text-left">Q2 2025 – Phase 1 Web Launch (Live)</h3>
-                  <p className="text-left text-aftl-subtext">Core Platrr platform live with meal planning, grocery lists, and community features.</p>
+                  <h3 className="text-xl font-bold">Q2 2025 – Phase 1 Web Launch (Live)</h3>
+                  <p className="text-gray-600">Core Platrr platform live with meal planning, grocery lists, and community features.</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="text-4xl">🍳</div>
                 <div>
-                  <h3 className="text-xl font-bold text-left">Q3 2025 – Chef Mode Rollout</h3>
-                  <p className="text-left text-aftl-subtext">Premium subscription tier with exclusive recipes, curated plans, and AI-guided cooking sessions.</p>
+                  <h3 className="text-xl font-bold">Q3 2025 – Chef Mode Rollout</h3>
+                  <p className="text-gray-600">Premium subscription tier with exclusive recipes and AI-guided cooking sessions.</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="text-4xl">📱</div>
                 <div>
-                  <h3 className="text-xl font-bold text-left">Q4 2025 – Mobile App Launch</h3>
-                  <p className="text-left text-aftl-subtext">Native iOS and Android apps to bring Platrr to your pocket — anywhere, anytime.</p>
+                  <h3 className="text-xl font-bold">Q4 2025 – Mobile App Launch</h3>
+                  <p className="text-gray-600">Native iOS and Android apps to bring Platrr to your pocket — anywhere, anytime.</p>
                 </div>
               </div>
             </div>
@@ -212,46 +194,44 @@ function AboutPage() {
 
       {/* What We Believe Section */}
       <AnimateOnScroll>
-        <div className="py-16 bg-light-mist">
+        <div className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-aftl-heading mb-12 text-center">
-              What We Believe
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-12 text-center">What We Believe</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="p-8 rounded-lg shadow-lg bg-white">
                 <div className="flex items-center mb-4">
                   <div className="text-4xl mr-4">🤖</div>
-                  <h3 className="text-2xl font-bold text-aftl-heading">Automation with Purpose</h3>
+                  <h3 className="text-2xl font-bold">Automation with Purpose</h3>
                 </div>
-                <p className="text-aftl-body">We build tools that remove digital friction, not add complexity — every feature must serve a real outcome.</p>
+                <p className="text-gray-700">We build tools that remove digital friction, not add complexity.</p>
               </div>
               <div className="p-8 rounded-lg shadow-lg bg-white">
                 <div className="flex items-center mb-4">
                   <div className="text-4xl mr-4">🎨</div>
-                  <h3 className="text-2xl font-bold text-aftl-heading">Intuitive by Design</h3>
+                  <h3 className="text-2xl font-bold">Intuitive by Design</h3>
                 </div>
-                <p className="text-aftl-body">Good design disappears — Platrr feels natural from first use, no manuals needed.</p>
+                <p className="text-gray-700">Good design disappears — Platrr feels natural from first use.</p>
               </div>
               <div className="p-8 rounded-lg shadow-lg bg-white">
                 <div className="flex items-center mb-4">
                   <div className="text-4xl mr-4">🔐</div>
-                  <h3 className="text-2xl font-bold text-aftl-heading">Privacy by Default</h3>
+                  <h3 className="text-2xl font-bold">Privacy by Default</h3>
                 </div>
-                <p className="text-aftl-body">Your data belongs to you. We never sell it. Full transparency, always.</p>
+                <p className="text-gray-700">Your data belongs to you. Full transparency, always.</p>
               </div>
               <div className="p-8 rounded-lg shadow-lg bg-white">
                 <div className="flex items-center mb-4">
                   <div className="text-4xl mr-4">🌱</div>
-                  <h3 className="text-2xl font-bold text-aftl-heading">Lean, Scalable Growth</h3>
+                  <h3 className="text-2xl font-bold">Lean, Scalable Growth</h3>
                 </div>
-                <p className="text-aftl-body">We scale mindfully — with clean systems, real feedback, and no feature bloat.</p>
+                <p className="text-gray-700">We scale mindfully — with clean systems and real feedback.</p>
               </div>
               <div className="p-8 rounded-lg shadow-lg bg-white">
                 <div className="flex items-center mb-4">
                   <div className="text-4xl mr-4">🌍</div>
-                  <h3 className="text-2xl font-bold text-aftl-heading">Built for Community</h3>
+                  <h3 className="text-2xl font-bold">Built for Community</h3>
                 </div>
-                <p className="text-aftl-body">We empower people to connect, share, and grow together around food, health, and wellness.</p>
+                <p className="text-gray-700">We empower people to connect, share, and grow together.</p>
               </div>
             </div>
           </div>
@@ -260,14 +240,13 @@ function AboutPage() {
 
       {/* CTA Footer Section */}
       <AnimateOnScroll>
-        <div className="py-16">
+        <div className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 text-center">
-            <p className="text-lg md:text-xl text-aftl-body mt-4 max-w-3xl mx-auto">
-              We’re currently bootstrapped, focused on building products that matter.
-              If you're a founder, partner, or investor interested in what we’re doing —
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+              We’re currently bootstrapped, focused on building products that matter. If you're a founder, partner, or investor interested in what we’re doing —
             </p>
             <div className="mt-8">
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
                 Contact Us
               </Link>
             </div>
