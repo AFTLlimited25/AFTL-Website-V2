@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import UploadResume from '../../components/UploadResume';
 
 function CareersPage() {
   return (
@@ -106,6 +107,14 @@ function CareersPage() {
               <a href="mailto:contact@aftl.co.uk" className="btn btn-primary">Apply Now</a>
               <a href="https://www.linkedin.com/company/aftl" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Apply through LinkedIn</a>
             </div>
+            <div className="min-h-screen bg-base text-aftl-body">
+      <div className="container mx-auto px-4 py-16">
+        {/* ... existing job listings ... */}
+
+        {/* Upload Resume Section */}
+        <UploadResume />
+      </div>
+    </div>
           </div>
         </div>
       </div>
