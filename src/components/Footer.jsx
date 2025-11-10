@@ -3,53 +3,72 @@ import React from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import AnimatedLogo from './AnimatedLogo';
 
 function Footer() {
   return (
-    <footer className="bg-secondary-accent-graphite text-white py-2 z-10 relative">
+    <footer className="bg-white text-gray-900 py-6 border-t z-10 relative">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-2">
-          <div className="col-span-1 flex items-center justify-center md:">
-            <div className="w-32 h-22">
-              <img src="/aftl logo (1).svg" alt="AFTL Logo" className="w-full h-full" />
+        
+        {/* Main Grid */}
+        <div className="grid md:grid-cols-4 gap-6 text-center md:text-left">
+          
+          {/* Logo Section */}
+          <div className="flex justify-center md:justify-start items-center">
+            <div className="w-28 md:w-32">
+              <img src="/aftl logo (1).svg" alt="AFTL Logo" className="w-full h-auto" />
             </div>
           </div>
-          <div className="col-span-3 grid md:grid-cols-3 gap-2 ">
-            <div className="md:ml-auto">
-              <h4 className="font-bold mb-2 text-white">Product</h4>
-              <ul>
-                <li><Link href="/products#features" className="text-footer-link hover:underline">Features</Link></li>
-                <li><Link href="/about#roadmap" className="text-footer-link hover:underline">Pricing</Link></li>
-                <li><Link href="/about#roadmap" className="text-footer-link hover:underline">Roadmap</Link></li>
+
+          {/* Links Section */}
+          <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div>
+              <h4 className="font-bold mb-2">Product</h4>
+              <ul className="space-y-1">
+                <li><Link href="/products#features" className="text-gray-600 hover:text-black">Features</Link></li>
+                <li><Link href="/about#roadmap" className="text-gray-600 hover:text-black">Pricing</Link></li>
+                <li><Link href="/about#roadmap" className="text-gray-600 hover:text-black">Roadmap</Link></li>
               </ul>
             </div>
-            <div className="md:ml-auto">
-              <h4 className="font-bold mb-2 text-white">Company</h4>
-              <ul>
-                <li><Link href="/about" className="text-footer-link hover:underline">About Us</Link></li>
-                <li><Link href="/about#team" className="text-footer-link hover:underline">Our Team</Link></li>
-                <li><Link href="/careers" className="text-footer-link hover:underline">Careers</Link></li>
+
+            <div>
+              <h4 className="font-bold mb-2">Company</h4>
+              <ul className="space-y-1">
+                <li><Link href="/about" className="text-gray-600 hover:text-black">About Us</Link></li>
+                <li><Link href="/about#team" className="text-gray-600 hover:text-black">Our Team</Link></li>
+                <li><Link href="/careers" className="text-gray-600 hover:text-black">Careers</Link></li>
               </ul>
             </div>
-            <div className="md:ml-auto">
-              <h4 className="font-bold mb-2 text-white">Support</h4>
-              <ul>
-                <li><Link href="/help" className="text-footer-link hover:underline">Help Center / FAQs</Link></li>
-                <li><Link href="/contact" className="text-footer-link hover:underline">Contact Us</Link></li>
-                <li><Link href="/privacy-policy" className="text-footer-link hover:underline">Privacy Policy</Link></li>
-                <li><Link href="/terms-of-service" className="text-footer-link hover:underline">Terms of Service</Link></li>
+
+            <div>
+              <h4 className="font-bold mb-2">Support</h4>
+              <ul className="space-y-1">
+                <li><Link href="/help" className="text-gray-600 hover:text-black">Help Center / FAQs</Link></li>
+                <li><Link href="/contact" className="text-gray-600 hover:text-black">Contact Us</Link></li>
+                <li><Link href="/privacy-policy" className="text-gray-600 hover:text-black">Privacy Policy</Link></li>
+                <li><Link href="/terms-of-service" className="text-gray-600 hover:text-black">Terms of Service</Link></li>
               </ul>
             </div>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-          <p className="text-xs text-cream">&copy; {new Date().getFullYear()} AFTL / Platrr. All rights reserved.</p>
-          <div className="flex justify-center space-x-4 mt-4">
-            <a href="https://www.linkedin.com/company/advanced-future-tech-limited" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400"><FontAwesomeIcon icon={faLinkedin} size="2x" style={{color: '#0077B5'}} /></a>
-            <a href="#" className="hover:text-gray-400"><FontAwesomeIcon icon={faTwitter} size="2x" style={{color: '#1DA1F2'}} /></a>
-            <a href="#" className="hover:text-gray-400"><FontAwesomeIcon icon={faInstagram} size="2x" style={{color: '#E4405F'}} /></a>
-            <a href="#" className="hover:text-gray-400"><FontAwesomeIcon icon={faYoutube} size="2x" style={{color: '#FF0000'}} /></a>
+
+        {/* Bottom Copyright + Icons */}
+        <div className="mt-6 pt-6 border-t border-gray-300 text-center">
+          <p className="text-sm text-gray-600">&copy; {new Date().getFullYear()} AFTL / Platrr. All rights reserved.</p>
+
+          {/* Social Icons */}
+          <div className="flex justify-center gap-4 mt-3">
+            <a href="https://www.linkedin.com/company/advanced-future-tech-limited" target="_blank" className="hover:opacity-70">
+              <FontAwesomeIcon icon={faLinkedin} size="lg" />
+            </a>
+            <a href="#" className="hover:opacity-70">
+              <FontAwesomeIcon icon={faTwitter} size="lg" />
+            </a>
+            <a href="#" className="hover:opacity-70">
+              <FontAwesomeIcon icon={faInstagram} size="lg" />
+            </a>
+            <a href="#" className="hover:opacity-70">
+              <FontAwesomeIcon icon={faYoutube} size="lg" />
+            </a>
           </div>
         </div>
       </div>
