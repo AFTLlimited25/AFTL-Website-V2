@@ -18,8 +18,9 @@ import PartnersCarousel from "@/components/PartnersCarousel";
 function MainComponent() {
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [currentProduct, setCurrentProduct] = useState(0);
-  const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  const router = useRouter();
   const videoId = "1WP636Jr-sFYARi490eWryGdyVOsGMoCl";
 
   const products = [
@@ -38,63 +39,104 @@ function MainComponent() {
   }, [products.length]);
 
   return (
-    <div className="relative min-h-screen text-gray-100 overflow-hidden font-poppins bg-black">
-      {/* 🌌 Enhanced Dark Blue Animated Gradient Background */}
-      <div className="absolute inset-0 -z-20 animate-moveBg bg-[radial-gradient(circle_at_30%_20%,rgba(0,150,255,0.5),transparent),radial-gradient(circle_at_70%_80%,rgba(255,0,150,0.4),transparent),radial-gradient(circle_at_50%_50%,rgba(0,255,200,0.3),transparent)]"></div>
+    <div className="relative min-h-screen text-gray-800 overflow-hidden font-poppins bg-[#f4f4f4]">
+      {/* Light smoother background */}
+      <div className="absolute inset-0 -z-20 animate-moveBg bg-[radial-gradient(circle_at_30%_20%,rgba(200,220,255,0.6),transparent),radial-gradient(circle_at_70%_80%,rgba(255,220,240,0.5),transparent)]"></div>
+      <div className="absolute inset-0 -z-10 backdrop-blur-[2px]"></div>
 
-      {/* Soft Overlay for Readability */}
-      <div className="absolute inset-0 -z-10 bg-black/60 backdrop-blur-[2px]"></div>
+      {/* ✅ UPDATED NAVBAR */}
+{/* ✅ UPDATED GREYESH BLACK NAVBAR */}
+<nav className="bg-[#111111] text-white fixed w-full z-50 shadow-lg border-b border-gray-800">
+  <div className="container mx-auto px-4 h-20 flex justify-between items-center">
 
-      {/* 🧭 Navigation */}
-      <nav className="bg-black/30 backdrop-blur-md fixed w-full z-50 shadow-md border-b border-white/10">
-        <div className="container mx-auto px-4 h-20 flex justify-between items-center text-white">
-          <Link href="/" className="flex items-center">
-            <AnimatedLogo />
-          </Link>
-          <div className="hidden md:flex items-center space-x-4">
-            <Link href="/products" className="px-5 py-2 rounded-full border border-white/20 hover:bg-white/10 transition">
-              Products
-            </Link>
-            <a
-              href="https://platrr.co.uk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-2 rounded-full border border-white/20 hover:bg-white/10 text-blue-400 font-semibold transition"
-            >
-              Platrr
-            </a>
-            <Link href="/about" className="px-5 py-2 rounded-full border border-white/20 hover:bg-white/10 transition">
-              About
-            </Link>
-            <Link href="/contact" className="px-5 py-2 rounded-full border border-white/20 hover:bg-white/10 transition">
-              Contact
-            </Link>
-          </div>
-        </div>
-      </nav>
+    {/* Logo */}
+    <Link href="/" className="flex items-center">
+      <AnimatedLogo /> {/* Logo stays visible on greyish black */}
+    </Link>
 
-      {/* 🌟 Hero Section */}
+    {/* Desktop Menu */}
+    <div className="hidden md:flex items-center space-x-6">
+      <Link
+        href="/products"
+        className="px-5 py-2 rounded-full border border-gray-600 hover:bg-gray-700 hover:text-white transition"
+      >
+        Products
+      </Link>
+      <a
+        href="https://platrr.co.uk"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-5 py-2 rounded-full border border-gray-600 hover:bg-gray-700 hover:text-white transition font-semibold"
+      >
+        Platrr
+      </a>
+      <Link
+        href="/about"
+        className="px-5 py-2 rounded-full border border-gray-600 hover:bg-gray-700 hover:text-white transition"
+      >
+        About
+      </Link>
+      <Link
+        href="/contact"
+        className="px-5 py-2 rounded-full border border-gray-600 hover:bg-gray-700 hover:text-white transition"
+      >
+        Contact
+      </Link>
+    </div>
+
+    {/* Mobile Hamburger */}
+    <button
+      className="md:hidden text-white text-3xl focus:outline-none"
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      {menuOpen ? "✕" : "☰"}
+    </button>
+  </div>
+
+  {/* Mobile Dropdown */}
+  {menuOpen && (
+    <div className="md:hidden bg-[#111111] text-white border-t border-gray-700 py-4 flex flex-col space-y-4 items-center">
+      <Link href="/products" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">
+        Products
+      </Link>
+      <a
+        href="https://platrr.co.uk"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => setMenuOpen(false)}
+        className="hover:text-gray-300"
+      >
+        Platrr
+      </a>
+      <Link href="/about" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">
+        About
+      </Link>
+      <Link href="/contact" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">
+        Contact
+      </Link>
+    </div>
+  )}
+</nav>
+
+
+
+
+      {/* Hero Section */}
       <AnimateOnScroll staggered={true}>
         <div className="pt-32 pb-20 px-4 text-center">
           <div className="container mx-auto">
-            <h1 className="text-6xl md:text-7xl font-extrabold max-w-4xl mx-auto mb-6 text-white drop-shadow-xl">
+            <h1 className="text-6xl md:text-7xl font-extrabold max-w-4xl mx-auto mb-6 text-gray-900 drop-shadow-xl">
               "Building the Future with AI"
             </h1>
-            <h2 className="text-xl md:text-2xl text-gray-300 mb-12">
+            <h2 className="text-xl md:text-2xl text-gray-600 mb-12">
               AFTL crafts intelligent tools to simplify life and work — fast, secure, and powerful.
             </h2>
 
             <div className="flex flex-col md:flex-row justify-center gap-4 mb-16">
-              <Link
-                href="/about"
-                className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition shadow-lg"
-              >
+              <Link href="/about" className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition shadow-lg">
                 Learn More About Us
               </Link>
-              <Link
-                href="/contact"
-                className="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-full hover:bg-white/20 transition shadow-lg"
-              >
+              <Link href="/contact" className="bg-white border border-gray-300 text-gray-900 px-6 py-3 rounded-full hover:bg-gray-200 transition shadow-lg">
                 See it in Action
               </Link>
             </div>
@@ -102,24 +144,23 @@ function MainComponent() {
         </div>
       </AnimateOnScroll>
 
-      {/* 🎬 Video Section */}
+      {/* Video Section */}
       <AnimateOnScroll>
         <div className="py-20">
           <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
-            <div className="relative aspect-video max-w-2xl w-full rounded-xl overflow-hidden shadow-2xl border border-white/20">
+            <div className="relative aspect-video max-w-2xl w-full rounded-xl overflow-hidden shadow-xl border border-gray-300">
               {!videoPlaying ? (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
                   <button
                     onClick={() => setVideoPlaying(true)}
-                    className="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-20 h-20 flex items-center justify-center transition-all duration-300 z-10"
-                    aria-label="Play Video"
+                    className="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-20 h-20 flex items-center justify-center transition-all duration-300"
                   >
                     <FontAwesomeIcon icon={faPlay} className="text-3xl" />
                   </button>
                   <img
                     src="https://ucarecdn.com/17d72eb0-636f-4470-b2f2-bfa7633d12d5/-/format/auto/"
                     alt="Video Thumbnail"
-                    className="absolute inset-0 w-full h-full object-cover opacity-80"
+                    className="absolute inset-0 w-full h-full object-cover opacity-70"
                   />
                 </div>
               ) : (
@@ -129,47 +170,41 @@ function MainComponent() {
                     src={`https://drive.google.com/file/d/${videoId}/preview`}
                     allow="autoplay; encrypted-media"
                     allowFullScreen
-                    title="Company Video"
                   ></iframe>
                 </div>
               )}
             </div>
-            <div className="max-w-md text-gray-200">
+            <div className="max-w-md text-gray-700">
               <p className="text-2xl font-light italic">
                 "AI doesn’t replace humans — it empowers them to do more."
               </p>
-              <p className="text-right text-gray-400 mt-4">- Shubham Tiwari</p>
+              <p className="text-right text-gray-500 mt-4">- Shubham Tiwari</p>
             </div>
           </div>
         </div>
       </AnimateOnScroll>
 
-      {/* 🤝 Partners Carousel */}
+      {/* Partners */}
       <PartnersCarousel />
 
-      {/* 💡 Product Card */}
+      {/* Product Card */}
       <AnimateOnScroll>
         <div className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-8 text-white">
-              Our Product
-            </h2>
+            <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">Our Product</h2>
             <div className="max-w-4xl mx-auto">
-              <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-xl">
+              <div className="bg-white shadow-xl rounded-2xl p-8 border border-gray-300">
                 <div className="flex flex-col md:flex-row items-center gap-6">
-                  <img src="/platrrsvg.svg" alt="Platrr Logo" className="h-24 brightness-110" />
+                  <img src="/platrrsvg.svg" alt="Platrr Logo" className="h-24" />
                   <div>
-                    <p className="text-lg font-semibold text-white uppercase">
+                    <p className="text-lg font-semibold text-gray-900 uppercase">
                       Turn any meal photo into a recipe with AI.
                     </p>
-                    <p className="text-md text-gray-300 mt-2">
-                      From photo to plate — get ingredients, recipes, and nutrition facts in seconds with AI.
+                    <p className="text-md text-gray-600 mt-2">
+                      From photo to plate — get ingredients, recipes, and nutrition facts in seconds.
                     </p>
                     <div className="mt-4">
-                      <Link
-                        href="/products"
-                        className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition"
-                      >
+                      <Link href="/products" className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
                         Learn More
                       </Link>
                     </div>
@@ -181,22 +216,15 @@ function MainComponent() {
         </div>
       </AnimateOnScroll>
 
-      {/* 🌈 Animation CSS inside JSX */}
       <style jsx global>{`
         @keyframes moveBg {
-          0% {
-            background-position: 0% 0%;
-          }
-          50% {
-            background-position: 100% 100%;
-          }
-          100% {
-            background-position: 0% 0%;
-          }
+          0% { background-position: 0% 0%; }
+          50% { background-position: 100% 100%; }
+          100% { background-position: 0% 0%; }
         }
         .animate-moveBg {
           background-size: 300% 300%;
-          animation: moveBg 20s ease-in-out infinite;
+          animation: moveBg 22s ease-in-out infinite;
         }
       `}</style>
     </div>

@@ -1,100 +1,101 @@
 "use client";
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import AnimatedLogo from './AnimatedLogo';
+import React, { useState } from "react";
+import Link from "next/link";
+import AnimatedLogo from "@/components/AnimatedLogo";
 
-function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname();
-
-  // Don't render navbar on landing page
-  if (pathname === '/') {
-    return null;
-  }
-
-  const navItems = [
-    { name: 'Home', path: '/', icon: 'home' },
-    { name: 'Products', path: '/products', icon: 'cube' },
-    { name: 'Platrr', path: 'https://platrr.co.uk', icon: 'utensils', external: true },
-    { name: 'About', path: '/about', icon: 'info-circle' },
-    { name: 'Contact', path: '/contact', icon: 'envelope' }
-  ];
-
-  const isActive = (path) => pathname === path;
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
-      {/* Hamburger Button and Logo */}
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <div className="bg-base/50 backdrop-blur-lg h-20">
-          <div className="container mx-auto px-6 h-full relative">
-            <div className="flex justify-between items-center absolute inset-x-6 -bottom-4">
-              <AnimatedLogo />
-              <div className="flex items-center space-x-4">
-                <button
-                  className="text-primary-text hover:text-primary-accent z-50 bg-base/50 backdrop-blur-lg p-2 rounded-full"
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                >
-                  <i className={`fas fa-${isMenuOpen ? 'times' : 'bars'} text-xl`}></i>
-                </button>
-              </div>
-            </div>
-          </div>
+    <nav className="bg-[#111111] text-white fixed w-full z-50 shadow-lg border-b border-gray-800">
+      <div className="container mx-auto px-4 h-16 flex justify-between items-center">
+
+        {/* ✅ Logo */}
+        <Link href="/" className="flex items-center">
+          <AnimatedLogo />
+        </Link>
+
+        {/* ✅ Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-4">
+
+          <Link
+            href="/"
+            className="px-4 py-2 rounded-full border border-gray-600 hover:bg-gray-700 hover:text-white transition font-semibold"
+          >
+            Home
+          </Link>
+
+          <Link
+            href="/products"
+            className="px-4 py-2 rounded-full border border-gray-600 hover:bg-gray-700 hover:text-white transition"
+          >
+            Products
+          </Link>
+
+          <a
+            href="https://platrr.co.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded-full border border-gray-600 hover:bg-gray-700 hover:text-white transition font-semibold"
+          >
+            Platrr
+          </a>
+
+          <Link
+            href="/about"
+            className="px-4 py-2 rounded-full border border-gray-600 hover:bg-gray-700 hover:text-white transition"
+          >
+            About
+          </Link>
+
+          <Link
+            href="/contact"
+            className="px-4 py-2 rounded-full border border-gray-600 hover:bg-gray-700 hover:text-white transition"
+          >
+            Contact
+          </Link>
         </div>
+
+        {/* ✅ Mobile Menu Button */}
+        <button
+          className="md:hidden text-white text-3xl focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
       </div>
 
-      {/* Content Spacer */}
-      <div className="h-16"></div>
+      {/* ✅ Mobile Dropdown */}
+      {menuOpen && (
+        <div className="md:hidden bg-[#111111] text-white border-t border-gray-700 py-4 flex flex-col space-y-4 items-center">
 
-      {/* Slide-in Menu */}
-      <div
-        className={`fixed top-0 right-0 h-full w-64 bg-secondary-accent-graphite/95 backdrop-blur-lg transform transition-transform duration-300 ease-in-out z-40 ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex flex-col pt-36 px-6">
-          {navItems.map((item) => (
-            item.external ? (
-              <a
-                key={item.path}
-                href={item.path}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center space-x-3 py-4 border-b border-border-soft/10 transition-colors duration-300 text-platrr-orange hover:text-white`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <i className={`fas fa-${item.icon} w-6`}></i>
-                <span className="font-bold">{item.name}</span>
-              </a>
-            ) : (
-              <Link
-                key={item.path}
-                href={item.path}
-                className={`flex items-center space-x-3 py-4 border-b border-border-soft/10 transition-colors duration-300 ${
-                  isActive(item.path)
-                    ? 'text-white'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-              <i className={`fas fa-${item.icon} w-6`}></i>
-              <span className="font-bold">{item.name}</span>
-            </Link>
-            )
-          ))}
+          <Link href="/" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">
+            Home
+          </Link>
+
+          <Link href="/products" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">
+            Products
+          </Link>
+
+          <a
+            href="https://platrr.co.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            className="hover:text-gray-300"
+          >
+            Platrr
+          </a>
+
+          <Link href="/about" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">
+            About
+          </Link>
+
+          <Link href="/contact" onClick={() => setMenuOpen(false)} className="hover:text-gray-300">
+            Contact
+          </Link>
         </div>
-      </div>
-
-      {/* Overlay */}
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30"
-          onClick={() => setIsMenuOpen(false)}
-        ></div>
       )}
-    </>
+    </nav>
   );
 }
-
-export default Navbar;

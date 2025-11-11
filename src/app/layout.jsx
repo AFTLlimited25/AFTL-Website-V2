@@ -50,64 +50,44 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+
         <meta name="theme-color" content="#ffffff" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         />
-        <SchemaMarkup
-          schema={{
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "AFTL (Advanced Future Tech Labs)",
-            "url": "https://aftl.co.uk",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://aftl.co.uk/aftl%20logo%20(1).svg",
-              "width": "512",
-              "height": "512",
-              "caption": "AFTL - Advanced Future Tech Labs"
-            },
-            "image": {
-              "@type": "ImageObject",
-              "url": "https://aftl.co.uk/aftl%20logo%20(1).svg",
-              "width": "512",
-              "height": "512"
-            },
-            "description": "AFTL provides AI solutions, AI-powered tools, and intelligent automation to help businesses grow and innovate.",
-            "sameAs": [
-              "https://linkedin.com/company/aftl",
-              "https://twitter.com/aftl"
-            ]
-          }}
-        />
       </head>
+
       <body className={`${inter.className} bg-base text-primary-text`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SmoothScroll>
+
+            {/* ✅ Navbar visible on every page */}
+            <Navbar />
+
             <PageLayout>
-              <Navbar />
               <main className="min-h-screen">
                 {children}
               </main>
               <Footer />
               <CookieConsentBanner />
-              <Script
-                src="https://www.googletagmanager.com/gtag/js?id=G-Z8LF55XR3G"
-                strategy="afterInteractive"
-              />
-              <Script id="google-analytics" strategy="afterInteractive">
-                {`
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', 'G-Z8LF55XR3G');
-                `}
-              </Script>
             </PageLayout>
+
+            {/* Google Analytics */}
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-Z8LF55XR3G" strategy="afterInteractive" />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-Z8LF55XR3G');
+              `}
+            </Script>
+
           </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
