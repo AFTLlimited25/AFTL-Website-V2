@@ -19,33 +19,25 @@ export async function POST(req) {
     const fileName = `${Date.now()}-${file.name}`;
     const filePath = path.join(uploadDir, fileName);
 
-    // Save uploaded file
-    fs.writeFileSync(filePath, fileBuffer);
+    await fs.promises.writeFile(filePath, fileBuffer);
 
-    // Create Gmail SMTP transporter
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: true, // use SSL for Gmail
+      service: "gmail",
       auth: {
         user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        pass: process.env.SMTP_PASS, // Gmail App Password
       },
     });
 
-    // Send email
     await transporter.sendMail({
       from: `"Career Portal" <${process.env.SMTP_USER}>`,
       to: process.env.EMAIL_TO,
       subject: "New Resume Uploaded",
       text: "A new resume has been uploaded. See attachment.",
-      attachments: [
-        {
-          filename: file.name,
-          path: filePath,
-        },
-      ],
+      attachments: [{ filename: file.name, path: filePath }],
     });
+
+    await fs.promises.unlink(filePath);
 
     return NextResponse.json({ message: "✅ Resume uploaded & email sent successfully!" });
   } catch (error) {
