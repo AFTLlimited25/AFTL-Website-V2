@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations and styles */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom utilities */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-in-on-scroll.animate-fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Background patterns */
+.bg-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.15) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  @apply bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:bg-blue-800 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply border-2 border-blue-700 text-blue-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-blue-700 hover:text-white shadow-lg hover:shadow-xl;
+}
+
+.btn-ghost {
+  @apply text-gray-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-gray-100 hover:text-blue-700;
+}
+
+/* Enhanced card styles */
+.card {
+  @apply bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+}
+
+.card-interactive {
+  @apply card transform hover:scale-105 cursor-pointer;
+}
+
+/* Form enhancements */
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg transition-all duration-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-select {
+  @apply form-input appearance-none bg-white;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+/* Loading states */
+.loading {
+  @apply animate-pulse;
+}
+
+.skeleton {
+  @apply bg-gray-200 rounded animate-pulse;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive typography */
+@media (min-width: 640px) {
+  .text-responsive-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-responsive-xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-responsive-xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+/* Gradient text utilities */
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800;
+}
+
+.gradient-text-purple {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600;
+}
+
+.gradient-text-green {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600;
+}
+
+/* Enhanced focus states */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* Animation delays for staggered effects */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Backdrop blur utilities */
+.backdrop-blur-xs {
+  backdrop-filter: blur(2px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(8px);
+}
+
+/* Custom border utilities */
+.border-gradient {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(45deg, #3b82f6, #1e40af) border-box;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid #000;
+  }
+  
+  .btn-primary {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dark mode support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-ready {
+    /* Dark mode styles can be added here */
+  }
+}
+
+/* Selection styles */
+::selection {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: inherit;
+}
+
+/* Focus visible for better accessibility */
+.focus-visible:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Custom container utilities */
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding: 0 2rem;
+  }
+}
