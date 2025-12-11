@@ -141,7 +141,7 @@ const submitApplication = async (e) => {
       else formData.append(k, v);
     });
 
-    const res = await fetch("http://localhost:5000/api/apply", {
+    const res = await fetch("https://aftlbackend.netlify.app/api/apply", {
       method: "POST",
       body: formData,
     });
