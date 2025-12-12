@@ -154,11 +154,11 @@ function Footer() {
             </p>
             <div className="flex space-x-4">
               <Phone className="h-5 w-5 text-blue-400" />
-              <span className="text-gray-300">+44 (0) 123 456 7890</span>
+              <span className="text-gray-300">+44 78672 15041</span>
             </div>
             <div className="flex space-x-4 mt-2">
               <Mail className="h-5 w-5 text-blue-400" />
-              <span className="text-gray-300">info@aftl.co.uk</span>
+              <span className="text-gray-300">contact@aftl.co.uk</span>
             </div>
           </div>
 
@@ -181,8 +181,8 @@ function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
                 <div className="text-gray-300">
-                  <p>123 Business Street</p>
-                  <p>London, UK SW1A 1AA</p>
+                  <p>Wolsdon Street , Plymouth</p>
+                  <p>United Kingdom</p>
                 </div>
               </div>
             </div>
