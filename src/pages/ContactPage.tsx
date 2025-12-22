@@ -31,7 +31,7 @@ const ContactPage = () => {
     setStatus({ loading: true, success: null, error: null });
 
     try {
-      const res = await fetch('/api/apply', {
+      const res = await fetch('https://aftl-backend.onrender.com/api/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
