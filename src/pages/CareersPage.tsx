@@ -141,9 +141,10 @@ const submitApplication = async (e) => {
       else formData.append(k, v);
     });
 
-    const res = await fetch("https://aftl-backend.onrender.com/api/apply", {
+    const res = await fetch("https://www.roshandevs.com/api/apply", {
       method: "POST",
       body: formData,
+      credentials: "include",
     });
 
     if (!res.ok) throw new Error("Failed to submit application");
